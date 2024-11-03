@@ -15,7 +15,8 @@ function HomepageHeader() {
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div>
-          <Link className="button button--secondary button--lg" to="/docs/weekly">每日周报 ️</Link>
+          <Link className="button button--secondary button--lg" to="/docs/weekly">周报 ️</Link>
+          <Link className="button button--secondary button--lg" to="/docs/daily">日报</Link>
         </div>
       </div>
     </header>

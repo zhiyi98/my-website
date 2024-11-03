@@ -6,7 +6,7 @@ const config: Config = {
   // 网站的标题
   title: 'zhiyi98的博客',
   // 网站的副标题
-  tagline: '网站的副标题',
+  tagline: 'zhiyi98博客的副标题',
   // 网站的favicon路径
   favicon: 'img/favicon.ico',
 

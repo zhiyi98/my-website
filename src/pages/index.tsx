@@ -1,38 +1,34 @@
 import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
-import Heading from '@theme/Heading';
 import React from 'react';
 
-
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+export default function Home(): React.ReactElement {
   return (
-    <header>
-      <div>
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div>
-          <Link className="button button--secondary button--lg" to="/docs/weekly">周报 ️</Link>
-          <Link className="button button--secondary button--lg" to="/docs/daily">日报</Link>
+    <div className="tw-flex tw-flex-col tw-items-center tw-justify-center tw-h-screen tw-space-y-8 "
+         style={{
+           backgroundImage: "url('https://www.ruanyifeng.com/images_pub/pub_156.jpg')",
+           backgroundSize: 'cover',
+           backgroundPosition: 'center'
+         }}    >
+      <div className="tw-flex tw-flex-col tw-w-3/4 lg:tw-w-1/4">
+        <div className="tw-border-amber-700">
+          <Link className="" to="/docs/daily">
+            <div className="tw-text-center tw-text-white">日报</div>
+          </Link>
+        </div>
+
+        <div className="tw-border-amber-700">
+          <Link className="" to="/docs/weekly">
+            <div className="tw-text-center tw-text-white">周报</div>
+          </Link>
+        </div>
+
+        <div className="tw-border-amber-700">
+          <Link className="" to="/docs/blog">
+            <div className="tw-text-center tw-text-white">博客</div>
+          </Link>
         </div>
       </div>
-    </header>
-  );
-}
-
-export default function Home(): React.ReactElement {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <main>
-        <HomepageHeader/>
-      </main>
-    </Layout>
+    </div>
   );
 }
    

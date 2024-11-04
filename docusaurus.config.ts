@@ -66,7 +66,7 @@ const config: Config = {
         },
         theme: {
           // 自定义CSS的路径
-          customCss: './src/css/custom.css',
+          customCss: ['./src/css/custom.css'],
         },
       } satisfies Preset.Options,
     ],
@@ -81,11 +81,6 @@ const config: Config = {
       title: '我的网络日志',
       // 下滚动页面时，自动隐藏导航栏
       hideOnScroll: true,
-      // 导航栏的logo配置
-      logo: {
-        alt: 'zhiyi Logo',
-        src: 'img/zhiyi.png',
-      },
       // 导航栏的项目列表
       items: [
         {
@@ -112,6 +107,7 @@ const config: Config = {
         },
       ],
     },
+
     footer: {
       // 底部栏的样式
       style: 'dark',
@@ -151,12 +147,29 @@ const config: Config = {
       // 版权信息
       copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
     },
+
     // 代码高亮的主题配置
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+
+  // 插件
+  plugins: [
+    async function myPlugin(context, options) {
+      return {
+        name: "docusaurus-tailwindcss",
+        configurePostCss(postcssOptions) {
+          // 添加 TailwindCSS 和 AutoPrefixer.
+          postcssOptions.plugins.push(require("tailwindcss"));
+          postcssOptions.plugins.push(require("autoprefixer"));
+          return postcssOptions;
+        },
+      };
+    },
+  ],
+
 };
 
 

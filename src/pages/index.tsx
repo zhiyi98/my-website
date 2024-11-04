@@ -23,7 +23,7 @@ export default function Home(): React.ReactElement {
         </div>
 
         <div className="tw-border-amber-700">
-          <Link className="" to="/docs/blog">
+          <Link className="" to="/blog">
             <div className="tw-text-center tw-text-white">博客</div>
           </Link>
         </div>
